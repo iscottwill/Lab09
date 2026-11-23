@@ -1,0 +1,24 @@
+# Meadow BLE protocol device configuration.
+#
+# GATT layout:
+#   Service UUID:        0x007D (125)
+#   Characteristic UUID: 5a5a5a56-69ab-4a49-a2f2-de5b292458f3
+#   Properties:          Read, Write, WriteWithoutResponse, Notify
+#   Pins:                ADC A00-A05, inputs D02-D05, outputs D08-D11
+
+Lifecycle:
+
+    RestartOnAppFailure: false
+
+Logging:
+
+    LogLevel:
+
+        Default: Information
+
+#MeadowCloud:
+
+#    Enabled: false
+#    EnableUpdates: false
+#    EnableHealthMetrics: false
+#    HealthMetricsIntervalMinutes: 60

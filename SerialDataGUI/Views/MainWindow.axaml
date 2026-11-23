@@ -1,0 +1,137 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:SerialDataGUI.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="650"
+        x:Class="SerialDataGUI.Views.MainWindow"
+        x:DataType="vm:MainViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="SerialDataGUI">
+
+    <Design.DataContext>
+        <vm:MainViewModel />
+    </Design.DataContext>
+
+    <ScrollViewer>
+        <StackPanel Spacing="15" Margin="15">
+            <GroupBox Header="connection">
+                <Grid ColumnDefinitions="Auto,*,Auto"
+                      RowDefinitions="Auto,Auto,Auto,Auto"
+                      ColumnSpacing="10"
+                      RowSpacing="8">
+
+                    <TextBlock Grid.Row="0" Grid.Column="0"
+                               Text="Transport"
+                               VerticalAlignment="Center" />
+
+                    <ComboBox Grid.Row="0" Grid.Column="1"
+                              ItemsSource="{Binding TransportOptions}"
+                              SelectedItem="{Binding SelectedTransport, Mode=TwoWay}"
+                              IsEnabled="{Binding CanChangeTransport}" />
+
+                    <Button Grid.Row="0" Grid.Column="2"
+                            Content="{Binding ConnectionButtonText}"
+                            Command="{Binding ToggleConnectionCommand}"
+                            MinWidth="110" />
+
+                    <TextBlock Grid.Row="1" Grid.Column="0"
+                               Text="Endpoint"
+                               VerticalAlignment="Center" />
+
+                    <TextBox Grid.Row="1" Grid.Column="1"
+                             Text="{Binding Endpoint, Mode=TwoWay}"
+                             IsEnabled="{Binding IsEndpointEditable}"
+                             PlaceholderText="/dev/ttyUSB0" />
+
+                    <ProgressBar Grid.Row="1" Grid.Column="2"
+                                 IsIndeterminate="True"
+                                 IsVisible="{Binding IsBusy}" />
+
+                    <TextBlock Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3"
+                               Text="{Binding ConnectionStatus}" />
+
+                    <TextBlock Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3"
+                               Text="{Binding LastError}"
+                               Foreground="IndianRed"
+                               TextWrapping="Wrap" />
+                </Grid>
+            </GroupBox>
+
+            <GroupBox Header="send">
+                <Grid ColumnDefinitions="*,*,*,*,*,*"
+                      RowDefinitions="Auto,Auto"
+                      ColumnSpacing="10"
+                      RowSpacing="10">
+
+                    <ToggleButton Grid.Row="0" Grid.Column="0"
+                                  IsChecked="{Binding D08, Mode=TwoWay}">D08</ToggleButton>
+                    <ToggleButton Grid.Row="0" Grid.Column="1"
+                                  IsChecked="{Binding D09, Mode=TwoWay}">D09</ToggleButton>
+                    <ToggleButton Grid.Row="0" Grid.Column="2"
+                                  IsChecked="{Binding D10, Mode=TwoWay}">D10</ToggleButton>
+                    <ToggleButton Grid.Row="0" Grid.Column="3"
+                                  IsChecked="{Binding D11, Mode=TwoWay}">D11</ToggleButton>
+
+                    <Button Grid.Row="0" Grid.Column="4" Grid.ColumnSpan="2"
+                            Command="{Binding SendCommand}">Send</Button>
+
+                    <TextBlock Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="6"
+                               Text="{Binding RawPacketSend, StringFormat='Raw Command (Last Sent): {0}'}" />
+                </Grid>
+            </GroupBox>
+
+            <GroupBox Header="receive">
+                <Grid ColumnDefinitions="*,*,*,*,*,*"
+                      RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto"
+                      ColumnSpacing="10"
+                      RowSpacing="10">
+
+                    <TextBlock Grid.Row="0" Grid.Column="0"
+                               Text="{Binding PacketNumber, StringFormat='Packet: {0}'}" />
+
+                    <TextBlock Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2"
+                               Text="{Binding InputStateText, StringFormat='Inputs D02-D05: {0}'}" />
+
+                    <TextBlock Grid.Row="0" Grid.Column="3"
+                               Text="{Binding ReceivedPacketCount, StringFormat='Valid: {0}'}" />
+
+                    <TextBlock Grid.Row="0" Grid.Column="4" Grid.ColumnSpan="2"
+                               Text="{Binding InvalidPacketCount, StringFormat='Invalid: {0}'}" />
+
+                    <TextBlock Grid.Row="1" Grid.Column="0">A0</TextBlock>
+                    <TextBlock Grid.Row="1" Grid.Column="1">A1</TextBlock>
+                    <TextBlock Grid.Row="1" Grid.Column="2">A2</TextBlock>
+                    <TextBlock Grid.Row="1" Grid.Column="3">A3</TextBlock>
+                    <TextBlock Grid.Row="1" Grid.Column="4">A4</TextBlock>
+                    <TextBlock Grid.Row="1" Grid.Column="5">A5</TextBlock>
+
+                    <TextBlock Grid.Row="2" Grid.Column="0" Text="{Binding A0}" />
+                    <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding A1}" />
+                    <TextBlock Grid.Row="2" Grid.Column="2" Text="{Binding A2}" />
+                    <TextBlock Grid.Row="2" Grid.Column="3" Text="{Binding A3}" />
+                    <TextBlock Grid.Row="2" Grid.Column="4" Text="{Binding A4}" />
+                    <TextBlock Grid.Row="2" Grid.Column="5" Text="{Binding A5}" />
+
+                    <TextBlock Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="4"
+                               Text="{Binding RawPacketReceived, StringFormat='Raw Telemetry (Last): {0}'}"
+                               TextWrapping="Wrap" />
+
+                    <ToggleButton Grid.Row="3" Grid.Column="4" Grid.ColumnSpan="2"
+                                  IsChecked="{Binding ShowHistory, Mode=TwoWay}">Show History</ToggleButton>
+
+                    <TextBlock Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="6"
+                               Text="Raw Packets (Received):" />
+
+                    <ScrollViewer Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="6"
+                                  Height="200"
+                                  VerticalScrollBarVisibility="Auto"
+                                  IsVisible="{Binding ShowHistory}">
+                        <TextBlock Text="{Binding RawPacketsReceived}"
+                                   TextWrapping="Wrap" />
+                    </ScrollViewer>
+                </Grid>
+            </GroupBox>
+        </StackPanel>
+    </ScrollViewer>
+</Window>

@@ -1,0 +1,8 @@
+is_global = true
+build_property.RootNamespace = MeadowBleDevice
+build_property.ProjectDir = /home/lodestone/cmsn/repos/Lab08/MeadowBleDevice/
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.CsWinRTUseWindowsUIXamlProjections = false
+build_property.EffectiveAnalysisLevelStyle = 
+build_property.EnableCodeStyleSeverity = 

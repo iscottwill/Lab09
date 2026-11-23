@@ -1,0 +1,10 @@
+/home/lodestone/cmsn/repos/Lab08/SerialDataProtocol/bin/Release/netstandard2.0/SerialProtocol.deps.json
+/home/lodestone/cmsn/repos/Lab08/SerialDataProtocol/bin/Release/netstandard2.0/SerialProtocol.dll
+/home/lodestone/cmsn/repos/Lab08/SerialDataProtocol/bin/Release/netstandard2.0/SerialProtocol.pdb
+/home/lodestone/cmsn/repos/Lab08/SerialDataProtocol/obj/Release/netstandard2.0/SerialProtocol.csproj.AssemblyReference.cache
+/home/lodestone/cmsn/repos/Lab08/SerialDataProtocol/obj/Release/netstandard2.0/SerialProtocol.GeneratedMSBuildEditorConfig.editorconfig
+/home/lodestone/cmsn/repos/Lab08/SerialDataProtocol/obj/Release/netstandard2.0/SerialProtocol.AssemblyInfoInputs.cache
+/home/lodestone/cmsn/repos/Lab08/SerialDataProtocol/obj/Release/netstandard2.0/SerialProtocol.AssemblyInfo.cs
+/home/lodestone/cmsn/repos/Lab08/SerialDataProtocol/obj/Release/netstandard2.0/SerialProtocol.csproj.CoreCompileInputs.cache
+/home/lodestone/cmsn/repos/Lab08/SerialDataProtocol/obj/Release/netstandard2.0/SerialProtocol.dll
+/home/lodestone/cmsn/repos/Lab08/SerialDataProtocol/obj/Release/netstandard2.0/SerialProtocol.pdb

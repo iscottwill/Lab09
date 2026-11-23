@@ -1,0 +1,141 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/lodestone/cmsn/repos/Lab08/MeadowBleDevice/MeadowBleDevice.csproj": {}
+  },
+  "projects": {
+    "/home/lodestone/cmsn/repos/Lab08/MeadowBleDevice/MeadowBleDevice.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/lodestone/cmsn/repos/Lab08/MeadowBleDevice/MeadowBleDevice.csproj",
+        "projectName": "App",
+        "projectPath": "/home/lodestone/cmsn/repos/Lab08/MeadowBleDevice/MeadowBleDevice.csproj",
+        "packagesPath": "/home/lodestone/.nuget/packages/",
+        "outputPath": "/home/lodestone/cmsn/repos/Lab08/MeadowBleDevice/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/lodestone/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "/usr/share/dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "/home/lodestone/cmsn/repos/Lab08/SerialDataProtocol/SerialProtocol.csproj": {
+                "projectPath": "/home/lodestone/cmsn/repos/Lab08/SerialDataProtocol/SerialProtocol.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "10.0.100"
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "dependencies": {
+            "Meadow.F7": {
+              "target": "Package",
+              "version": "[2.*, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/10.0.113/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/lodestone/cmsn/repos/Lab08/SerialDataProtocol/SerialProtocol.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/lodestone/cmsn/repos/Lab08/SerialDataProtocol/SerialProtocol.csproj",
+        "projectName": "SerialProtocol",
+        "projectPath": "/home/lodestone/cmsn/repos/Lab08/SerialDataProtocol/SerialProtocol.csproj",
+        "packagesPath": "/home/lodestone/.nuget/packages/",
+        "outputPath": "/home/lodestone/cmsn/repos/Lab08/SerialDataProtocol/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/lodestone/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "/usr/share/dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "10.0.100"
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "dependencies": {
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/10.0.113/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
